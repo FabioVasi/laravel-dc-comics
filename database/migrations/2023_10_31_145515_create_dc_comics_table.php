@@ -19,8 +19,8 @@ return new class extends Migration
             $table->decimal('price', 5, 2)->nullable();
             $table->string('series', 80)->nullable();
             $table->date('sale_date')->nullable();
-            $table->
-            $table->
+            $table->text('artists')->nullable();
+            $table->text('writers')->nullable();
             $table->timestamps();
         });
     }
