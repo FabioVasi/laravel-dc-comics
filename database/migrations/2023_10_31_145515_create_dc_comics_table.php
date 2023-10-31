@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('dc_comics', function (Blueprint $table) {
             $table->id();
+            $table->string('thumb')->nullable();
+            $table->string('title', 150);
+            $table->text('description')->nullable();
+            $table->decimal('price', 5, 2)->nullable();
+            $table->string('series', 80)->nullable();
+            $table->date('sale_date')->nullable();
+            $table->
+            $table->
             $table->timestamps();
         });
     }
