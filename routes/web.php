@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DcComicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guests\PageController;
 
@@ -14,5 +15,12 @@ use App\Http\Controllers\Guests\PageController;
 |
 */
 
+// http://127.0.0.1:8888/
 Route::get('/', [PageController::class, 'index'])->name('home');
+// http://127.0.0.1:8888/about
 Route::get('/about', [PageController::class, 'about'])->name('about');
+
+// http://127.0.0.1:8888/comics
+// http://127.0.0.1:8888/comics/show/1
+// // http://127.0.0.1:8888/comics/create
+Route::resource('comics', DcComicController::class);
