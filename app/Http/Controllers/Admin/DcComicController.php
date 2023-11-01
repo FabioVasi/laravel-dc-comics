@@ -40,11 +40,13 @@ class DcComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DcComic $dcComic)
+    public function show($id)
     {
         //dd($dcComic);
 
-        dd(DcComic::find(id));
+        $dcComic = DcComic::find($id);
+
+        //dd($dcComic);
 
         return view('admin.comics.show', compact('dcComic'));
     }
