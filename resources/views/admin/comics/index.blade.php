@@ -5,7 +5,13 @@
 @section('content')
 
     <div class="container">
+        
+        <h1>Comics</h1>
+
+        <a href="{{route('comics.create')}}">Add Comic</a>
+
         <div class="table-responsive-sm">
+
             <table class="table table-light">
                 <thead>
                     <tr>
@@ -21,7 +27,7 @@
                     @forelse ($comics as $comic)
                     <tr class="">
                         <td scope="row" >{{$comic->id}}</td>
-                        <td><img src="{{$comic->thumb}}" alt=""></td>
+                        <td><img width="100" src="{{$comic->thumb}}" alt=""></td>
                         <td>{{$comic->title}}</td>
                         <td>{{$comic->price}}</td>
                         <td>{{$comic->series}}</td>
@@ -32,7 +38,9 @@
                     @endforelse
                 </tbody>
             </table>
+
         </div>
+
     </div>
 
 @endsection
