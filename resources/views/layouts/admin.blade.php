@@ -17,9 +17,20 @@
 
 <body>
 
-    <main id="site_main" class="">
+    <header>
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="nav navbar-nav">
+                <a class="nav-item nav-link active" href="{{route('home')}}" aria-current="page">HOME</a>
+                <a class="nav-item nav-link" href="{{route('comics.index')}}">COMICS</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="site_main" class="min-vh-100">
         @yield('content')
     </main>
+
+    @include('partials.footer')
 
 </body>
 

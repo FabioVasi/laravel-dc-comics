@@ -22,5 +22,6 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 // http://127.0.0.1:8888/comics
 Route::get('/comics', [PageController::class, 'comics'])->name('guests.comics');
 // http://127.0.0.1:8888/comics/show/1
+
 // // http://127.0.0.1:8888/comics/create
 Route::resource('admin/comics', DcComicController::class);
