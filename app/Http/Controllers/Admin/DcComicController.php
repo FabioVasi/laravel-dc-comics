@@ -30,27 +30,28 @@ class DcComicController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        $file_path = null;
+        if($request->has('thumb')) {
+            $file_path = Storage::put('comics_thumb', $request->thumb);
+        }
 
-        $file_path = Storage::put('comics_thumb', $request->thumb);
+        $dcComic = new DcComic();
+        $dcComic->name = $request->title;
+        $dcComic->name = $request->price;
+        $dcComic->name = $request->series;
+        $dcComic->save();
 
-        dd($file_path);
+        return to_route('comics.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(DcComic $dcComic)
     {
-        //dd($dcComic);
 
-        $dcComic = DcComic::find($id);
+        return view('admin.comics.show', compact('dcComic'));
 
-        //dd($dcComic);
-        if($dcComic) {
-            return view('admin.comics.show', compact('dcComic'));
-        }
-        abort(404);
     }
 
     /**
