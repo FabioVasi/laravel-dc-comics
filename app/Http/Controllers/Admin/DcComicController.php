@@ -47,8 +47,10 @@ class DcComicController extends Controller
         $dcComic = DcComic::find($id);
 
         //dd($dcComic);
-
-        return view('admin.comics.show', compact('dcComic'));
+        if($dcComic) {
+            return view('admin.comics.show', compact('dcComic'));
+        }
+        abort(404);
     }
 
     /**

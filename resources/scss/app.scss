@@ -1,1 +1,96 @@
 @import '~bootstrap/scss/bootstrap';
+// reset rules
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// color var
+:root{
+    --dc-color: #0282f9;
+    --footer-bg: #303030;
+    --main-section-bg: #1c1c1c;
+    --icon-footer-bg: #797979;
+}
+
+// header style
+header{
+    background-color: white;
+}
+
+// top header
+.top-header{
+    background-color: var(--dc-color);
+}
+
+// bottom header
+form{
+    border-bottom: 4px solid var(--dc-color);
+}
+.search{
+    width: 200px;
+    text-align: end;
+    padding-right: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.search-lens{
+    font-size: 24px;
+}
+
+
+
+// main
+
+.banner{
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+.current{
+    background-color: var(--dc-color);
+    margin-top: -10%;
+}
+.products{
+    background-color: var(--main-section-bg);
+}
+.load{
+    background-color: var(--dc-color);
+    width: 200px;
+    height: 40px;
+}
+.snippets{
+    background-color: var(--dc-color);
+}
+
+
+
+// footer
+.top-footer{
+    background-image: url('../img/footer-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.large-logo{
+    background-image: url('../img/dc-logo-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-position: center;
+}
+.bottom-footer{
+    background-color: var(--footer-bg);
+}
+.btn-lg{
+    border-color: var(--dc-color);
+}
+.follow{
+    color: var(--dc-color);
+}
+.image{
+    height: 70px;
+}
+.svg{
+    height: 50px;
+}
