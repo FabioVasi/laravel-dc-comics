@@ -1,0 +1,38 @@
+@extends('layouts.admin')
+
+
+
+@section('content')
+
+    <div class="container">
+        <div class="table-responsive-sm">
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Thumb</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Series</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($comics as $comic)
+                    <tr class="">
+                        <td scope="row" >{{$comic->id}}</td>
+                        <td><img src="{{$comic->thumb}}" alt=""></td>
+                        <td>{{$comic->title}}</td>
+                        <td>{{$comic->price}}</td>
+                        <td>{{$comic->series}}</td>
+                        <td>View/Edit/Delete</td>
+                    </tr>
+                    @empty
+                    <p>Nothing to show</p>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+@endsection

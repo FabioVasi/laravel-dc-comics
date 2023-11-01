@@ -13,7 +13,7 @@ class DcComicController extends Controller
      */
     public function index()
     {
-        return view('comics.index');
+        return view('admin.comics.index', ['comics' => DcComic::all()]);
     }
 
     /**

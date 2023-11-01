@@ -9,10 +9,16 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     function index() {
+        //dd(DcComic::all());
         return view('welcome');
     }
 
     function about() {
         return view('about');
+    }
+
+    function comics() {
+        dd(DcComic::all());
+        return view('comics');
     }
 }
