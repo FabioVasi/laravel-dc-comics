@@ -27,7 +27,7 @@
                     @forelse ($comics as $comic)
                     <tr class="">
                         <td scope="row" >{{$comic->id}}</td>
-                        <td><img width="100" src="{{('storage/' . $dcComic->thumb)}}" alt=""></td>
+                        <td><img width="100" src="{{('storage/' . $comic->thumb)}}" alt=""></td>
                         <td>{{$comic->title}}</td>
                         <td>{{$comic->price}}</td>
                         <td>{{$comic->series}}</td>

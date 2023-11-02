@@ -34,7 +34,7 @@
                 <div class="">
                     <ul class="text-muted list-unstyled d-flex justify-content-evenly align-items-center">
                         <li class="px-2">
-                            <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="{{route('about')}}">CHARACTERS</a>
+                            <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="{{route('home')}}">CHARACTERS</a>
                         </li>
                         <li class="px-2">
                             <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="{{route('guests.comics')}}">COMICS</a>
@@ -58,7 +58,7 @@
                             <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="#">FANS</a>
                         </li>
                         <li class="px-2">
-                            <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="#">NEWS</a>
+                            <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="{{route('about')}}">NEWS</a>
                         </li>
                         <li class="px-2">
                             <a class="py-5 text-decoration-none text-muted fs-5 fw-bold" href="{{route('comics.index')}}">ADMIN</a>
