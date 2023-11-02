@@ -13,7 +13,10 @@
             <td>{{$dcComic->title}}</td>
             <td>{{$dcComic->price}}</td>
             <td>{{$dcComic->series}}</td>
-            <td>View/Edit/Delete</td>
+            <td>
+                <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">View</a>
+                Edit/Delete
+            </td>
         </tr>
 
     </div>
