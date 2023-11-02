@@ -57,7 +57,7 @@ class DcComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DcComic $dcComic)
+    public function edit(DcComic $dccomic)
     {
         //
     }
@@ -65,7 +65,7 @@ class DcComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DcComic $dcComic)
+    public function update(Request $request, DcComic $dccomic)
     {
         //
     }
@@ -73,7 +73,7 @@ class DcComicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DcComic $dcComic)
+    public function destroy(DcComic $dccomic)
     {
         //
     }

@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <form action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data">
+        <form class="border-0" action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data">
 
             @csrf
 
@@ -18,7 +18,7 @@
 
             <div class="mb-3">
                 <label for="price" class="form-laber">Price</label>
-                <input type="number" step="0.01" class="form-control" name="price" id="price" aria-describedby="priceHelper">
+                <input type="number" step="0.01" class="form-control" name="price" id="price" aria-describedby="priceHelper" placeholder="19.99">
                 <small id="priceHelper" class="form-text text-muted">Type the Price here</small>
             </div>
 
