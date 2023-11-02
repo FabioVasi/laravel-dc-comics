@@ -8,7 +8,7 @@
         
         <h1>Comics</h1>
 
-        <a href="{{route('comics.create')}}">Add Comic</a>
+        <a class="btn btn-primary my-3" href="{{route('comics.create')}}">Add Comic</a>
 
         <div class="table-responsive-sm">
 
