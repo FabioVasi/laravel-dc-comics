@@ -1,4 +1,4 @@
-<header id="site_header" class="">
+<header id="site_header" class="mb-3">
 
     <div class="top-header mb-3">
 
