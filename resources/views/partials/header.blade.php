@@ -2,7 +2,7 @@
 
     <div class="top-header mb-3">
 
-        <div class="container d-flex justify-content-end align-items-center">
+        <div class="container px-0 d-flex justify-content-end align-items-center">
             <h6 class="text-white m-0">
                 DC POWER⁵ᴹ VISA®
             </h6>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="bottom-header d-flex justify-content-between align-items-center">
-        <div class="container">
+        <div class="container px-0">
             <div class="d-flex justify-content-between align-items-center">
                 
                 <div>
