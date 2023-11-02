@@ -35,11 +35,11 @@ class DcComicController extends Controller
             $file_path = Storage::put('comics_thumb', $request->thumb);
         }
 
-        $dcComic = new DcComic();
-        $dcComic->name = $request->title;
-        $dcComic->name = $request->price;
-        $dcComic->name = $request->series;
-        $dcComic->save();
+        $dccomic = new DcComic();
+        $dccomic->name = $request->title;
+        $dccomic->name = $request->price;
+        $dccomic->name = $request->series;
+        $dccomic->save();
 
         return to_route('comics.index');
     }
@@ -47,10 +47,10 @@ class DcComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DcComic $dcComic)
+    public function show(DcComic $dccomic)
     {
 
-        return view('admin.comics.show', compact('dcComic'));
+        return view('admin.comics.show', compact('dccomic'));
 
     }
 

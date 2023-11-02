@@ -6,15 +6,15 @@
 
     <div class="container">
         
-        <h2>{{$dcComic->id}}</h2>
+        <h2>{{$dccomic->id}}</h2>
         <tr class="">
-            <td scope="row" >{{$dcComic->id}}</td>
-            <td><img width="100" src="{{$dcComic->thumb}}" alt=""></td>
-            <td>{{$dcComic->title}}</td>
-            <td>{{$dcComic->price}}</td>
-            <td>{{$dcComic->series}}</td>
+            <td scope="row" >{{$dccomic->id}}</td>
+            <td><img width="100" src="{{$dccomic->thumb}}" alt=""></td>
+            <td>{{$dccomic->title}}</td>
+            <td>{{$dccomic->price}}</td>
+            <td>{{$dccomic->series}}</td>
             <td>
-                <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">View</a>
+                <a href="#" class="btn btn-primary">View</a>
                 Edit/Delete
             </td>
         </tr>

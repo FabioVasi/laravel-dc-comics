@@ -20,7 +20,7 @@ class PageController extends Controller
         return view('comics', ['comics' => DcComic::all()]);
     }
 
-    function showComics(DcComic $dcComic) {
-        return view('show_comics', compact('dcComic'));
+    function showComics(DcComic $dccomic) {
+        return view('show_comics', compact('dccomic'));
     }
 }
