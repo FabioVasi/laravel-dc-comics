@@ -31,19 +31,16 @@ class DcComicController extends Controller
     public function store(Request $request)
     {
 
+        $data = $request->all();
         $file_path = null;
         if($request->has('thumb')) {
             $file_path = Storage::put('comics_thumb', $request->thumb);
+            $data['thumb'] = $file_path;
         }
 
-        DcComic::create([
-            'title' => $request->title,
-            'price' => $request->price,
-            'series' => $request->series,
-            'thumb' => $request->thumb
-        ]);
+        $dccomic = DcComic::create($data);
 
-        return to_route('comics.index');
+        return to_route('comics.index', $dccomic);
     }
 
     /**
