@@ -30,16 +30,18 @@ class DcComicController extends Controller
      */
     public function store(Request $request)
     {
+
         $file_path = null;
         if($request->has('thumb')) {
             $file_path = Storage::put('comics_thumb', $request->thumb);
         }
 
-        $dccomic = new DcComic();
-        $dccomic->name = $request->title;
-        $dccomic->name = $request->price;
-        $dccomic->name = $request->series;
-        $dccomic->save();
+        DcComic::create([
+            'title' => $request->title,
+            'price' => $request->price,
+            'series' => $request->series,
+            'thumb' => $request->thumb
+        ]);
 
         return to_route('comics.index');
     }
@@ -59,7 +61,7 @@ class DcComicController extends Controller
      */
     public function edit(DcComic $dccomic)
     {
-        //
+        return view('admin.comics.edit', compact('dccomic'));
     }
 
     /**
@@ -67,7 +69,7 @@ class DcComicController extends Controller
      */
     public function update(Request $request, DcComic $dccomic)
     {
-        //
+        
     }
 
     /**
