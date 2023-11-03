@@ -6,12 +6,12 @@
 
     <div class="container">
 
-    <h1>Edit Comic: {{$comic-id}}</h1>
+    <h1>Edit Comic {{$comic->id}}</h1>
 
         <form class="border-0" action="{{route('comics.update', $comic)}}" method="POST" enctype="multipart/form-data">
 
             @csrf
-
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-laber">Title</label>
                 <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelper">
@@ -31,6 +31,9 @@
             </div>
 
             <div class="mb-3">
+                <div>
+                    <img width="200" src="{{asset('storage/' . $comic->thumb)}}" alt="">
+                </div>
                 <label for="price" class="form-laber">Choose a Thumb</label>
                 <input type="file" class="form-control" name="thumb" id="thumb" aria-describedby="thumbHelper">
                 <small id="thumbHelper" class="form-text">Choose an Image to upload for the Product</small>

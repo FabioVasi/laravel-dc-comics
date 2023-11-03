@@ -6,6 +6,8 @@
 
     <div class="container">
 
+    <h1>Create Comic</h1>
+
         <form class="border-0" action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data">
 
             @csrf

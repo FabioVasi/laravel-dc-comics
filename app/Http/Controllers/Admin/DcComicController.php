@@ -69,7 +69,20 @@ class DcComicController extends Controller
      */
     public function update(Request $request, DcComic $dccomic)
     {
-        
+        $data = $request->all();
+
+        if($request->has('thumb') && $dccomic->thumb) {
+
+            Storage::delete($dccomic->thumb);
+
+            $newImageFile = $request->thumb;
+            $path = Storage::put('comics_image', $newImageFile);
+            $data['thumb'] = $path;
+
+        }
+
+        $dccomic->update($data);
+        return to_route('comics.show', $dccomic);
     }
 
     /**

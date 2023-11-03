@@ -33,7 +33,8 @@
                         <td>{{$comic->series}}</td>
                         <td>
                             <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">View</a>
-                            /Edit/Delete
+                            <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-primary">Edit</a>
+                            /Delete
                         </td>
                     </tr>
                     @empty

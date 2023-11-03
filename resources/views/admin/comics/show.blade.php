@@ -16,7 +16,8 @@
                         <h3>{{$dccomic->title}}</h3>
                         <h2>{{$dccomic->price}}</h2>
                         <h2>{{$dccomic->series}}</h2>
-                        <a href="#" class="btn btn-primary">View</a>Edit/Delete
+                        <a href="#" class="btn btn-primary">View</a>
+                        <a href="#" class="btn btn-primary">Edit</a>/Delete
                     </div>
                 </div>
             </div>
