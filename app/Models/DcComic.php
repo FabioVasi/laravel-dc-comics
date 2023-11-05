@@ -9,7 +9,5 @@ class DcComic extends Model
 {
     use HasFactory;
 
-    protected $table = "dc_comics";
-
-    protected $fillable = ['title', 'thumb', 'description', 'price'];
+    protected $fillable = ['title', 'thumb', 'description', 'price', 'series'];
 }
