@@ -32,7 +32,7 @@ class DcComicController extends Controller
     {
 
         $data = $request->all();
-        $file_path = null;
+        //$file_path = null;
         if($request->has('thumb')) {
             $file_path = Storage::put('comics_thumb', $request->thumb);
             $data['thumb'] = $file_path;
@@ -40,7 +40,7 @@ class DcComicController extends Controller
 
         $dccomic = DcComic::create($data);
 
-        return to_route('comics.index', $dccomic);
+        return to_route('comics.index')->with('message', 'Comic created successfully');
     }
 
     /**
@@ -87,6 +87,11 @@ class DcComicController extends Controller
      */
     public function destroy(DcComic $dccomic)
     {
-        //
+        if(!is_null($dccomic->thumb)) {
+            Storage::delete($dccomic->thumb);
+        }
+        $dccomic->delete();
+
+        return to_route('comics.index')->with('message', 'Comic deleted successfully');
     }
 }
