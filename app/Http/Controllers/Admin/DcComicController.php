@@ -70,15 +70,22 @@ class DcComicController extends Controller
     {
         $val_data = $request->validate();
 
-        if($request->has('thumb') && $dccomic->thumb) {
-
-            Storage::delete($dccomic->thumb);
-
+        if($request->has('thumb')) {
+            
             $newImageFile = $request->thumb;
+
             $path = Storage::put('comics_image', $newImageFile);
+
+            if(!is_null($dccomic->thumb) && Storage::fileExists($dccomic->thumb)) {
+
+                Storage::delete($dccomic->thumb);
+    
+            }
+
             $val_data['thumb'] = $path;
 
         }
+        
 
         $dccomic->update($val_data);
         return to_route('comics.index')->with('message', 'Comic updated successfully');
