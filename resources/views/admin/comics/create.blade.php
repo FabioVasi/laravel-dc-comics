@@ -8,45 +8,46 @@
 
     <h1>Create Comic</h1>
 
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach(@errors->any() as $error)
-            <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+    @include('partials.errors')
 
         <form class="border-0" action="{{route('comics.store')}}" method="POST" enctype="multipart/form-data">
 
             @csrf
 
             <div class="mb-3">
-                <label for="title" class="form-laber">Title</label>
-                <input type="text" class="form-control" @error('title') is-invalid @enderror" name="title" id="title" aria-describedby="titleHelper" maxlength="150" placeholder="Type cthe Title here" required>
-                <small id="titleHelper" class="form-text text-muted">Type the Title here</small>
-                @error('title')
-                    <div class="alert-danger">{{message}}</div>
+                <label for="name" class="form-laber">Title</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" aria-describedby="nameHelper" maxlength="150" placeholder="Type the Title here" required>
+                <small id="nameHelper" class="form-text text-muted">Type the Title here</small>
+                @error('name')
+                    <div class="text-danger">{{message}}</div>
                 @enderror     
             </div>
 
             <div class="mb-3">
                 <label for="price" class="form-laber">Price</label>
-                <input type="number" step="0.01" class="form-control" name="price" id="price" aria-describedby="priceHelper" placeholder="19.99" maxlength="30" required>
+                <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" name="price" id="price" aria-describedby="priceHelper" placeholder="99.99" maxlength="30" required>
                 <small id="priceHelper" class="form-text text-muted">Type the Price here</small>
+                @error('price')
+                    <div class="text-danger">{{message}}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="series" class="form-laber">Series</label>
-                <input type="text" class="form-control" name="series" id="series" aria-describedby="seriesHelper" maxlength="200" required>
+                <input type="text" class="form-control @error('series') is-invalid @enderror" name="series" id="series" aria-describedby="seriesHelper" maxlength="200" placeholder="type the series here" required>
                 <small id="seriesHelper" class="form-text text-muted">Type the Series here</small>
+                @error('series')
+                    <div class="text-danger">{{message}}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
-                <label for="price" class="form-laber">Choose a Thumb</label>
-                <input type="file" class="form-control" name="thumb" id="thumb" aria-describedby="thumbHelper">
+                <label for="thumb" class="form-laber">Choose a Thumb</label>
+                <input type="file" class="form-control @error('thumb') is-invalid @enderror" name="thumb" id="thumb" aria-describedby="thumbHelper"  placeholder="">
                 <small id="thumbHelper" class="form-text">Choose an Image to upload for the Product</small>
+                @error('thumb')
+                    <div class="text-danger">{{message}}</div>
+                @enderror
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

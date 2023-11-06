@@ -8,6 +8,8 @@
 
     <h1>Edit Comic {{$comic->id}}</h1>
 
+    @include('partials.errors')
+
         <form class="border-0" action="{{route('comics.update', $comic)}}" method="POST" enctype="multipart/form-data">
 
             @csrf

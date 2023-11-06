@@ -59,7 +59,7 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                             <!-- Delete form -->
-                                            <form action="{{route('lightsabers.destroy', $comic->id)}}" method="POST">
+                                            <form action="{{route('lightsabers.destroy', $dccomic->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Confirm</button>

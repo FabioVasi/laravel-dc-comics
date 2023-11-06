@@ -37,15 +37,13 @@ class DcComicController extends Controller
             'series' => 'min:3|max:200',
             'thumb' => 'nullable|image|max:128'
         ]);
-        
-        dd($val_data);
-        $data = $request->all();
+
         if($request->has('thumb')) {
             $file_path = Storage::put('comics_thumb', $request->thumb);
-            $data['thumb'] = $file_path;
+            $val_data['thumb'] = $file_path;
         }
 
-        $dccomic = DcComic::create($data);
+        DcComic::create($val_data);
 
         return to_route('comics.index')->with('message', 'Comic created successfully');
     }
