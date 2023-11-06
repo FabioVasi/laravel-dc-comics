@@ -31,8 +31,15 @@ class DcComicController extends Controller
     public function store(Request $request)
     {
 
+        $val_data = $request->validate([
+            'title' => 'required|min:3|max:150',
+            'price' => 'nullable',
+            'series' => 'min:3|max:200',
+            'thumb' => 'nullable|image|max:128'
+        ]);
+        
+        dd($val_data);
         $data = $request->all();
-        //$file_path = null;
         if($request->has('thumb')) {
             $file_path = Storage::put('comics_thumb', $request->thumb);
             $data['thumb'] = $file_path;
