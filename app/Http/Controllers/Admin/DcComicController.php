@@ -6,6 +6,8 @@ use App\Models\DcComic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreDcComicRequest;
+use App\Http\Requests\UpdateDcComicRequest;
 
 class DcComicController extends Controller
 {
@@ -28,15 +30,10 @@ class DcComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreDcComicRequest $request)
     {
 
-        $val_data = $request->validate([
-            'title' => 'required|min:3|max:150',
-            'price' => 'nullable',
-            'series' => 'min:3|max:200',
-            'thumb' => 'nullable|image|max:128'
-        ]);
+        $val_data = $request->validate();
 
         if($request->has('thumb')) {
             $file_path = Storage::put('comics_thumb', $request->thumb);
@@ -69,9 +66,9 @@ class DcComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DcComic $dccomic)
+    public function update(UpdateDcComicRequest $request, DcComic $dccomic)
     {
-        $data = $request->all();
+        $val_data = $request->validate();
 
         if($request->has('thumb') && $dccomic->thumb) {
 
@@ -79,12 +76,12 @@ class DcComicController extends Controller
 
             $newImageFile = $request->thumb;
             $path = Storage::put('comics_image', $newImageFile);
-            $data['thumb'] = $path;
+            $val_data['thumb'] = $path;
 
         }
 
-        $dccomic->update($data);
-        return to_route('comics.show', $dccomic);
+        $dccomic->update($val_data);
+        return to_route('comics.index')->with('message', 'Comic updated successfully');
     }
 
     /**
