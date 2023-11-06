@@ -33,7 +33,12 @@
                 <tbody>
                     @forelse ($comics as $comic)
                     <tr class="">
-                        <td scope="row" >{{$comic->id}}</td>
+                        <td scope="row" >
+                            {{$comic->id}}
+                            @if($comic->trashed())
+                                Was trashed
+                            @endif
+                        </td>
                         <td><img width="100" src="{{('storage/' . $comic->thumb)}}" alt=""></td>
                         <td>{{$comic->title}}</td>
                         <td>{{$comic->price}}</td>
